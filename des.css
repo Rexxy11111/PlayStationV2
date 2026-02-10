@@ -1,0 +1,1047 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #0070cc;
+    --secondary-color: #1c1c1c;
+    --text-light: #ffffff;
+    --text-gray: #8a8a8a;
+    --accent: #00d4ff;
+    --bg-dark: #2e2e2e;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: var(--secondary-color);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    width: 50px;
+    height: 50px;
+}
+
+.ps-logo {
+    width: 100%;
+    height: 100%;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    flex: 1;
+    margin-left: 3rem;
+}
+
+.nav-menu a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.nav-menu a:hover {
+    color: var(--accent);
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.sign-in {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: 40px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.sign-in:hover {
+    background-color: #0056a8;
+}
+
+/* Hero Section */
+.hero {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 4rem 2rem;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: opacity 0.5s ease;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(10, 14, 39, 0.5);
+    z-index: 1;
+}
+
+.hero-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    z-index: 2;
+    padding-left: 2rem;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    color: var(--text-light);
+    transition: opacity 0.3s ease;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+    transition: opacity 0.3s ease;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Hero Image Selector */
+.hero-selector {
+    background-color: var(--secondary-color);
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.selector-container {
+    max-width: 1400px;
+    width: 100%;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.selector-item {
+    width: 120px;
+    height: 80px;
+    border-radius: 6px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.selector-item:hover {
+    transform: scale(1.1);
+    border-color: var(--accent);
+}
+
+.selector-item.active {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 15px rgba(0, 112, 204, 0.5);
+}
+
+.selector-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056a8;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 112, 204, 0.3);
+}
+
+.btn-secondary {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border: 1px solid var(--primary-color);
+    padding: 0.8rem 2rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: var(--text-light);
+    color: var(--bg-dark);
+}
+
+/* Secondary Hero Section */
+.hero-secondary {
+    background-color: #ffffff;
+    padding: 4rem 2rem;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+}
+
+.secondary-hero-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.secondary-hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+    color: #000000;
+    font-weight: 300;
+}
+
+.secondary-hero-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.secondary-hero-description {
+    font-size: 0.95rem;
+    color: var(--text-gray);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.btn-findout {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border: none;
+    padding: 0.7rem 1.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-findout:hover {
+    background-color: #0056a8;
+}
+
+.secondary-hero-images {
+    width: 100%;
+    height: 750px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ps5-image {
+    width: 110%;
+    height: auto;
+    object-fit: contain;
+}
+
+.image-placeholder-console {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #f0f0f0 0%, #ffffff 100%);
+    border: 2px dashed #cccccc;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: #999999;
+    font-weight: 600;
+}
+
+/* Game Showcase Selection Box */
+.game-showcase-selector {
+    background-color: #ffffff;
+    padding: 2rem 2rem;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.showcase-selector-container {
+    max-width: 1400px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.showcase-selector-item {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid #e9e9e9;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06); /* subtle default shadow */
+}
+
+.showcase-selector-item:hover {
+    transform: scale(1.03);
+    border-color: var(--accent);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.10); /* stronger on hover */
+}
+
+.showcase-selector-item.active {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 18px rgba(0, 112, 204, 0.12);
+}
+
+.showcase-placeholder {
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    border: 1px dashed #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    color: #666666;
+    font-weight: 600;
+}
+
+.showcase-selector-item img,
+.showcase-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.showcase-selector-item:hover img,
+.showcase-selector-item:hover .showcase-img {
+    transform: scale(1.03);
+}
+
+.secondary-title {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.2;
+    color: var(--text-light);
+    font-weight: 600;
+    transition: opacity 0.3s ease;
+}
+
+.secondary-text {
+    font-size: 0.95rem;
+    color: var(--text-gray);
+    margin-bottom: 2rem;
+    transition: opacity 0.3s ease;
+}
+
+/* Featured Games Section */
+.featured {
+    max-width: 1400px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    color: var(--text-light);
+}
+
+.view-all {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.view-all:hover {
+    color: var(--primary-color);
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.game-card {
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.game-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 112, 204, 0.2);
+}
+
+.game-image {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    background-color: #0a0e27;
+}
+
+.image-placeholder-small {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1c3a6b 0%, #0a0e27 100%);
+    border: 2px dashed var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.game-info {
+    padding: 1.5rem;
+}
+
+.game-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+}
+
+.price {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.btn-small {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.btn-small:hover {
+    background-color: #0056a8;
+}
+
+/* Trending Section */
+.trending {
+    background-color: var(--secondary-color);
+    padding: 4rem 2rem;
+    margin: 4rem 0;
+}
+
+.trending .section-header {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+}
+
+.trending-carousel {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.trending-card {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.trending-card:hover {
+    transform: scale(1.05);
+}
+
+.trending-image {
+    width: 100%;
+    height: 250px;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.image-placeholder-medium {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1c3a6b 0%, #0a0e27 100%);
+    border: 2px dashed var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.trending-card h3 {
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+/* Anniversary / Trending replacement styles */
+.trending.anniversary {
+    background-color: #f6f7f8;
+    color: #0f1720;
+    padding: 1rem 2rem;
+    margin: 0.5rem 0;
+}
+
+.anniversary-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.anniversary-text h2 {
+    font-size: 1.85rem;
+    color: #0f1720;
+    margin-bottom: 0.5rem;
+}
+
+.anniversary-text p {
+    color: #28303a;
+    max-width: 700px;
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+}
+
+.anniversary-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.anniversary-image {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.anniversary-logo {
+    max-width: 1000%;
+    height: auto;
+}
+
+/* Consoles Section */
+.consoles {
+    max-width: 1400px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.console-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.console-card {
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.console-card:hover {
+    background-color: #252525;
+    box-shadow: 0 15px 40px rgba(0, 112, 204, 0.15);
+}
+
+.console-image {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.console-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+}
+
+.console-card p {
+    color: var(--text-gray);
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+/* PlayStation Plus Section */
+.plus-section {
+    background: linear-gradient(135deg, #1a0033 0%, #0a0e27 100%);
+    padding: 4rem 2rem;
+    margin: 4rem 0;
+}
+
+.plus-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.plus-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+}
+
+.plus-content > p {
+    font-size: 1.2rem;
+    color: var(--text-gray);
+    margin-bottom: 2rem;
+}
+
+.plus-tiers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.tier-card {
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.tier-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 112, 204, 0.2);
+}
+
+.featured-tier {
+    /* Keep featured visual but do not change layout — make identical to others */
+    border: none;
+    transform: none;
+}
+
+.tier-card h4 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+}
+
+.tier-price {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+}
+
+.tier-features {
+    list-style: none;
+    margin-bottom: 1.5rem;
+    text-align: left;
+    color: var(--text-gray);
+}
+
+.tier-features li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tier-features li:last-child {
+    border-bottom: none;
+}
+
+/* Edited: Unified subscribe button styles
+   Connected to: `.subscribe-button` added in `index.html` (wired to purchase panel JS) */
+.subscribe-button,
+.tier-card button {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border: none;
+    padding: 0.7rem 1.4rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: background-color 0.2s ease, transform 0.12s ease;
+}
+
+.subscribe-button:hover,
+.tier-card button:hover {
+    background-color: #0056a8;
+    transform: translateY(-2px);
+}
+
+/* Edited: Styles for the small purchase panel
+    Connected to: JS `createPurchasePanel()` which injects `#purchase-panel` into the DOM */
+#purchase-panel {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background-color: var(--secondary-color);
+    padding: 14px 16px;
+    border-radius: 10px;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.6);
+    color: var(--text-light);
+    z-index: 2200;
+    width: 260px;
+    display: none;
+}
+
+#purchase-panel.show {
+    display: block;
+}
+
+#purchase-panel .purchase-close {
+    position: absolute;
+    right: 8px;
+    top: 6px;
+    background: transparent;
+    border: none;
+    color: var(--text-gray);
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#purchase-panel .purchase-title {
+    margin-top: 2px;
+    margin-bottom: 6px;
+    font-size: 1.05rem;
+}
+
+#purchase-panel .purchase-desc {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+    margin: 6px 0;
+}
+
+#purchase-panel .purchase-confirm {
+    width: 100%;
+    margin-top: 8px;
+    background-color: var(--accent);
+    border: none;
+    color: #000;
+    padding: 8px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+@media (max-width: 600px) {
+    #purchase-panel { right: 12px; left: 12px; bottom: 12px; width: auto; }
+}
+
+/* Edited: Add-to-Cart modal styles
+   Connected to: `createCartModal()` in `index.html` which injects `#cart-modal` */
+#cart-modal {
+    display: none;
+}
+
+#cart-modal.show {
+    display: block;
+}
+
+#cart-modal .cart-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    z-index: 2100;
+}
+
+#cart-modal .cart-box {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--secondary-color);
+    color: var(--text-light);
+    z-index: 2200;
+    width: 90%;
+    max-width: 720px;
+    border-radius: 12px;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+    overflow: hidden;
+}
+
+#cart-modal .cart-close {
+    position: absolute;
+    right: 12px;
+    top: 8px;
+    background: transparent;
+    border: none;
+    color: var(--text-gray);
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 2300;
+}
+
+#cart-modal .cart-body {
+    display: flex;
+    gap: 16px;
+    padding: 20px;
+    align-items: center;
+}
+
+#cart-modal .cart-image {
+    width: 45%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+#cart-modal .cart-info {
+    width: 55%;
+}
+
+#cart-modal .cart-title {
+    margin: 0 0 8px 0;
+    font-size: 1.1rem;
+}
+
+#cart-modal .cart-price {
+    color: var(--accent);
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+#cart-modal .buy-now {
+    background: var(--primary-color);
+    color: var(--text-light);
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* Added: short description shown in Add-to-Cart modal */
+#cart-modal .cart-desc {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin: 6px 0 12px 0;
+    max-height: 4.2em; /* roughly 3 lines */
+    overflow: hidden;
+}
+
+@media (max-width: 720px) {
+    #cart-modal .cart-body { flex-direction: column; }
+    #cart-modal .cart-image { width: 100%; }
+    #cart-modal .cart-info { width: 100%; }
+}
+
+/* Social Media Section */
+.social-section {
+    background-color: #f6f7f8;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.social-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.social-section h2 {
+    color: #0f1720;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.social-icon {
+    display: inline-block;
+    width: 130px;
+    height: 130px;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.social-icon:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--secondary-color);
+    padding: 3rem 2rem 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 4rem;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h5 {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section a {
+    color: var(--text-gray);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+    display: block;
+    padding: 0.5rem 0;
+}
+
+.footer-section a:hover {
+    color: var(--accent);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-gray);
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hero-content {
+        flex-direction: column;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .section-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .featured-tier {
+        transform: scale(1);
+    }
+
+    .games-grid,
+    .console-grid,
+    .plus-tiers {
+        grid-template-columns: 1fr;
+    }
+
+    .secondary-hero-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .secondary-hero-text h1 {
+        font-size: 2rem;
+    }
+}
